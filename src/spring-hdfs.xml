@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:hadoop="http://www.springframework.org/schema/hadoop"
+	xsi:schemaLocation="http://www.springframework.org/schema/hadoop http://www.springframework.org/schema/hadoop/spring-hadoop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+	<!-- 配置Configuration -->
+	<hadoop:configuration></hadoop:configuration>
+	<!-- 配置FileSystem -->
+	<hadoop:file-system uri="hdfs://192.168.236.3:9000" user="root" id="fileSystem" />
+	
+ 	<!-- 	原始Bean的注入方式
+ 	<bean id="configuratione" class="org.apache.hadoop.conf.Configuration"></bean>
+	<bean class="org.apache.hadoop.fs.FileSystem" id="fileSystem"  factory-method="get">
+		<constructor-arg name="uri" value="hdfs://Node2:9000"/> 
+		<constructor-arg name="conf" ref="configuratione"/> 
+		<constructor-arg name="user" value="root"/>
+	</bean>   -->
+
+</beans>
